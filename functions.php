@@ -1,71 +1,43 @@
 <?php
 
-
-/*  ------------------------------------------------------------
-	Nav Below
-	--------------------------------------------------------- */
-function childtheme_override_nav_below() { ?>
-		<div id="nav-below" class="navigation">
-			<div class="more"><?php next_posts_link(__('More', 'thematic')) ?></div>
-		</div>	
-<?php }
-
-/*  ------------------------------------------------------------
-	WooCommerce
-	--------------------------------------------------------- */
-remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
-remove_action('woocommerce_after_single_product', 'woocommerce_upsell_display');
-//remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
-remove_action('woocommerce_cart_collaterals', 'woocommerce_cross_sell_display');
-//add_action('woocommerce_single_product_summary', 'woocommerce_product_attributes_panel', 50);
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20, 2);
-remove_action('woocommerce_product_tabs', 'woocommerce_product_reviews_tab', 30 );
-remove_action('woocommerce_product_tab_panels', 'woocommerce_product_reviews_panel', 30 );
-
-function woocommerce_product_description_tab() {
-	if (get_the_content()) : ?><li><a href="#tab-description"><?php _e('Description', 'woothemes'); ?></a></li><?php endif;
-}
-
-
 /*  ------------------------------------------------------------
 	Relative timestamps
 	--------------------------------------------------------- */
 if(!function_exists('how_long_ago')){
-        function how_long_ago($timestamp){
-            $difference = time() - $timestamp;
+	function how_long_ago($timestamp){
+		$difference = time() - $timestamp;
 
-            if($difference >= 60*60*24*365){        // if more than a year ago
-                $int = intval($difference / (60*60*24*365));
-                $s = ($int > 1) ? 's' : '';
-                $r = $int . ' year' . $s . ' ago';
-            } elseif($difference >= 60*60*24*7*5){  // if more than five weeks ago
-                $int = intval($difference / (60*60*24*30));
-                $s = ($int > 1) ? 's' : '';
-                $r = $int . ' month' . $s . ' ago';
-            } elseif($difference >= 60*60*24*7){        // if more than a week ago
-                $int = intval($difference / (60*60*24*7));
-                $s = ($int > 1) ? 's' : '';
-                $r = $int . ' week' . $s . ' ago';
-            } elseif($difference >= 60*60*24){      // if more than a day ago
-                $int = intval($difference / (60*60*24));
-                $s = ($int > 1) ? 's' : '';
-                $r = $int . ' day' . $s . ' ago';
-            } elseif($difference >= 60*60){         // if more than an hour ago
-                $int = intval($difference / (60*60));
-                $s = ($int > 1) ? 's' : '';
-                $r = $int . ' hour' . $s . ' ago';
-            } elseif($difference >= 60){            // if more than a minute ago
-                $int = intval($difference / (60));
-                $s = ($int > 1) ? 's' : '';
-                $r = $int . ' minute' . $s . ' ago';
-            } else {                                // if less than a minute ago
-                $r = 'moments ago';
-            }
+		if($difference >= 60*60*24*365){        // if more than a year ago
+			$int = intval($difference / (60*60*24*365));
+			$s = ($int > 1) ? 's' : '';
+			$r = $int . ' year' . $s . ' ago';
+		} elseif($difference >= 60*60*24*7*5){  // if more than five weeks ago
+			$int = intval($difference / (60*60*24*30));
+			$s = ($int > 1) ? 's' : '';
+			$r = $int . ' month' . $s . ' ago';
+		} elseif($difference >= 60*60*24*7){        // if more than a week ago
+			$int = intval($difference / (60*60*24*7));
+			$s = ($int > 1) ? 's' : '';
+			$r = $int . ' week' . $s . ' ago';
+		} elseif($difference >= 60*60*24){      // if more than a day ago
+			$int = intval($difference / (60*60*24));
+			$s = ($int > 1) ? 's' : '';
+			$r = $int . ' day' . $s . ' ago';
+		} elseif($difference >= 60*60){         // if more than an hour ago
+			$int = intval($difference / (60*60));
+			$s = ($int > 1) ? 's' : '';
+			$r = $int . ' hour' . $s . ' ago';
+		} elseif($difference >= 60){            // if more than a minute ago
+			$int = intval($difference / (60));
+			$s = ($int > 1) ? 's' : '';
+			$r = $int . ' minute' . $s . ' ago';
+		} else {                                // if less than a minute ago
+			$r = 'moments ago';
+		}
 
-            return $r;
-        }
-    }
+		return $r;
+	}
+}
 
 /*  ------------------------------------------------------------
 	Home page background image
@@ -156,12 +128,12 @@ function childtheme_override_postmeta_authorlink() {
 	--------------------------------------------------------- */
 function childtheme_override_postfooter() {
 	global $id, $post;
-	    
+		
 	if ($post->post_type == 'page') { /* For logged-out "page" search results */
-        $postfooter = '';
-    } else {
+		$postfooter = '';
+	} else {
 		$postfooter = '<div class="entry-utility">' . thematic_postfooter_postcategory() . thematic_postfooter_posttags() . thematic_postfooter_postcomments();
-	    $postfooter .= "</div><!-- .entry-utility -->\n";    
+		$postfooter .= "</div><!-- .entry-utility -->\n";    
 	}
 
 	//echo apply_filters( 'thematic_postfooter', $postfooter );
@@ -169,9 +141,9 @@ function childtheme_override_postfooter() {
 
 function childtheme_override_postfooter_postcategory() {
 	$postcategory = '<span class="cat-links">';
-    $postcategory .= __('Categories: ', 'thematic') . get_the_category_list(', ');
-    $postcategory .= '</span>';
-    return $postcategory; 
+	$postcategory .= __('Categories: ', 'thematic') . get_the_category_list(', ');
+	$postcategory .= '</span>';
+	return $postcategory; 
 }
 
 function childtheme_override_postfooter_posttags() {
@@ -186,21 +158,21 @@ function childtheme_override_postfooter_posteditlink() {
 
 function childtheme_override_postfooter_postcomments() {
 	if (comments_open()) {
-	        $postcommentnumber = get_comments_number();
-	        if ($postcommentnumber > '1') {
-	            $postcomments = ' <span class="comments-link"><a href="' . apply_filters('the_permalink', get_permalink()) . '#comments" title="' . __('Comment on ', 'thematic') . the_title_attribute('echo=0') . '">';
-	            $postcomments .= get_comments_number() . __(' Comments', 'thematic') . '</a></span>';
-	        } elseif ($postcommentnumber == '1') {
-	            $postcomments = ' <span class="comments-link"><a href="' . apply_filters('the_permalink', get_permalink()) . '#comments" title="' . __('Comment on ', 'thematic') . the_title_attribute('echo=0') . '">';
-	            $postcomments .= get_comments_number() . __(' Comment', 'thematic') . '</a></span>';
-	        } elseif ($postcommentnumber == '0') {
-	            $postcomments = ' <span class="comments-link"><a href="' . apply_filters('the_permalink', get_permalink()) . '#comments" title="' . __('Comment on ', 'thematic') . the_title_attribute('echo=0') . '">';
-	            $postcomments .= __('Leave a comment', 'thematic') . '</a></span>';
-	        }
-	    } else {
-	        $postcomments = '';
-	    }             
-	    return $postcomments;
+			$postcommentnumber = get_comments_number();
+			if ($postcommentnumber > '1') {
+				$postcomments = ' <span class="comments-link"><a href="' . apply_filters('the_permalink', get_permalink()) . '#comments" title="' . __('Comment on ', 'thematic') . the_title_attribute('echo=0') . '">';
+				$postcomments .= get_comments_number() . __(' Comments', 'thematic') . '</a></span>';
+			} elseif ($postcommentnumber == '1') {
+				$postcomments = ' <span class="comments-link"><a href="' . apply_filters('the_permalink', get_permalink()) . '#comments" title="' . __('Comment on ', 'thematic') . the_title_attribute('echo=0') . '">';
+				$postcomments .= get_comments_number() . __(' Comment', 'thematic') . '</a></span>';
+			} elseif ($postcommentnumber == '0') {
+				$postcomments = ' <span class="comments-link"><a href="' . apply_filters('the_permalink', get_permalink()) . '#comments" title="' . __('Comment on ', 'thematic') . the_title_attribute('echo=0') . '">';
+				$postcomments .= __('Leave a comment', 'thematic') . '</a></span>';
+			}
+		} else {
+			$postcomments = '';
+		}             
+		return $postcomments;
 }
 
 /*  ------------------------------------------------------------
