@@ -2,33 +2,62 @@
 Theme Name: A Thematic Child Theme
 Theme URI: 
 Description: Use this theme to start your Thematic Child Theme development.
-Author: Ian Stewart
-Author URI: http://themeshaper.com/
+Author: Boston Dell-Vandenberg
+Author URI: http://bostondv.com/
 Template: thematic
 Version: 1.0
 Tags: Thematic
-.
-Thematic is © Ian Stewart http://themeshaper.com/
-.
 */
 
-/* Reset browser defaults */
-@import url('../thematic/library/styles/reset.css');
+/*  ------------------------------------------------------------
+	Global
+	--------------------------------------------------------- */
 
-/* Apply basic typography styles */
-@import url('../thematic/library/styles/typography.css');
+/*  ------------------------------------------------------------
+	Tables
+	--------------------------------------------------------- */
 
-/* Apply a basic layout */
-@import url('../thematic/library/layouts/2c-r-fixed.css');
+/*  ------------------------------------------------------------
+	Header
+	--------------------------------------------------------- */
 
-/* Apply basic image styles */
-@import url('../thematic/library/styles/images.css');
+/*  ------------------------------------------------------------
+	Menu
+	--------------------------------------------------------- */
 
-/* Apply default theme styles and colors */
-/* It's better to actually copy over default.css into this file (or link to a copy in your child theme) if you're going to do anything outrageous */
-@import url('../thematic/library/styles/default.css');
+/*  ------------------------------------------------------------
+	Footer
+	--------------------------------------------------------- */
 
-/* Prepare theme for plugins */
-@import url('../thematic/library/styles/plugins.css');
+/*  ------------------------------------------------------------
+	Posts
+	--------------------------------------------------------- */
+
+/*  ------------------------------------------------------------
+	Forms
+	--------------------------------------------------------- */
+
+/*  ------------------------------------------------------------
+	Mobile only
+	Style adjustments for viewports 480px and below
+	--------------------------------------------------------- */
+@media only screen and (max-width: 480px) {
+
+}
+
+/*  ------------------------------------------------------------
+	iPad, etc
+	Style adjustments for viewports 480px and over
+	--------------------------------------------------------- */
+@media only screen and (min-width: 480px) {
+
+}
+/*  ------------------------------------------------------------
+	Desktop
+	Style adjustments for viewports 768px and over
+	--------------------------------------------------------- */
+@media only screen and (min-width: 768px) {
+
+}
 
 

@@ -1,0 +1,595 @@
+/*  ------------------------------------------------------------
+	This is the default.css from themematic
+	modified to simplify css and reduce the amount of
+	style overides needed when designing a custom theme
+	--------------------------------------------------------- */
+/*  ------------------------------------------------------------
+	Global
+	--------------------------------------------------------- */
+body {
+	line-height: 1.5
+}
+table {
+	border: 1px solid #ccc;
+	border-width: 1px 1px 0 1px;
+	text-align: left;
+}
+tr {
+	border-bottom: 1px solid #ccc
+}
+th,
+td {
+	padding: 16px;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	color: #ccc;
+	height: 1px;
+	margin: 22px 0;
+}
+/*  ------------------------------------------------------------
+	Header
+	--------------------------------------------------------- */
+#header {
+	z-index: 2;
+	margin: 16px 0;
+}
+#blog-title {
+	font-size: 36px;
+	font-weight: bold;
+	line-height: 40px;
+}
+#blog-title a {
+	color: #000;
+	text-decoration: none;
+}
+#blog-description {
+	font-weight: normal;
+	font-size: 16px;
+	color: #666;
+	margin: 0;
+}
+/*  ------------------------------------------------------------
+	Menu
+	--------------------------------------------------------- */
+.skip-link {
+	display: none
+}
+#access {
+	overflow: visible;
+	z-index: 100;
+}
+.sf-menu,
+.sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sf-menu {
+	line-height: 1
+}
+.sf-menu ul {
+	display: none;
+}
+.sf-menu .current_page_item > ul,
+.sf-menu .current_page_ancestor > ul,
+.sf-menu .current_page_parent > ul {
+	display: block;
+}
+.sf-menu ul li {
+	width: 100%
+}
+.sf-menu li {
+	position: relative;
+	text-align: center;
+}
+.sf-menu a {
+	display: block;
+	position: relative;
+}
+
+/* Thematic sf menu */
+.sf-menu a {
+	padding: 12px;
+	text-decoration: none;
+}
+.sf-menu li {
+	background: #fff;
+}
+.sf-menu .current_page_item > a,
+.sf-menu .current_page_ancestor > a,
+.sf-menu .current_page_parent > a,
+.sf-menu .current-menu-item > a {
+	font-weight: bold;
+}
+.sf-menu ul a {
+	font-size: 13px;
+}
+.sf-menu ul li {
+	background: #eee;
+}
+.sf-menu ul li li {
+	background: #F4F4F4;
+}
+.sf-menu ul ul {
+	margin-top: 0
+}
+
+@media only screen and (min-width: 480px) {
+	.sf-menu {
+		float: left;
+	}
+	.sf-menu li {
+		float: left;
+		text-align: left;
+	}
+	.sf-menu a {
+		padding: 8px 12px;
+	}
+	.sf-menu ul {
+		display: block;
+		position: absolute;
+		left: -999em;
+		width: 10em; /* left offset of submenus need to match (see below) */
+	}
+	.sf-menu li:hover {
+		visibility: inherit; /* fixes IE7 'sticky bug' */
+	}
+	.sf-menu li:hover ul {
+		left: 0;
+		top: 2.5em; /* match top ul list item height */
+		z-index: 99;
+	}
+	ul.sf-menu li:hover li ul {
+		top: -999em
+	}
+	ul.sf-menu li li:hover ul {
+		left: 10em; /* match ul width */
+		top: 0;
+	}
+	ul.sf-menu li li:hover li ul {
+		top: -999em
+	}
+	ul.sf-menu li li li:hover ul {
+		left: 10em; /* match ul width */
+		top: 0;
+	}
+	.sf-menu li:hover ul {
+		top: 32px; /* overriding essential css */
+	}
+	.sf-menu li:hover {
+		background: #eee;
+	}
+	.sf-menu a:focus,
+	.sf-menu a:hover,
+	.sf-menu a:active {
+		outline: 0;
+		background: #ddd;
+	}
+}
+
+/*  ------------------------------------------------------------
+	Content
+	--------------------------------------------------------- */
+#main {
+	clear: both;
+	margin: 16px 0;
+}
+.page-title a,
+.entry-title a {
+	color: inherit;
+	text-decoration: none;
+}
+.page-title span {
+	font-weight: normal
+}
+.page-title .meta-nav {
+	font-style: normal
+}
+.hentry {
+	margin: 16px 0;
+}
+.single .hentry {
+	padding: 0
+}
+.home #content .sticky {
+	border: 1px solid #ccc;
+	margin: 0 0 22px 0;
+	padding: 22px 22px 0 22px;
+}
+.entry-meta {
+	color: #666
+}
+.entry-meta .author {
+
+}
+.entry-meta .n {
+
+}
+.entry-meta a {
+
+}
+.entry-meta abbr {
+	border: none;
+	cursor: text;
+}
+.entry-utility {
+	clear: both;
+	color: #666;
+}
+.entry-utility a {
+
+}
+.edit-link {
+	display: none
+}
+.page-link {
+	font-weight: bold;
+	margin: 0 0 22px 0;
+	padding: 22px 0 0 0;
+}
+.page-link a {
+	font-weight: normal;
+	text-decoration: none;
+}
+ul#links-page,
+ul#archives-page {
+	list-style: none;
+	margin-left: 0;
+	overflow: hidden;
+}
+li.content-column {
+	float: left;
+	margin-right: 22px;
+	width: 45%;
+}
+.gallery {
+	display: block;
+	clear: both;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 0 0 22px 0;
+}
+.gallery .gallery-row {
+	display: block;
+	clear: both;
+	overflow: hidden;
+	margin: 0;
+}
+.gallery .gallery-item {
+	overflow: hidden;
+	float: left;
+	margin: 0;
+	text-align: center;
+	list-style: none;
+	padding: 0;
+}
+.gallery .gallery-item img,
+.gallery .gallery-item img.thumbnail {
+	max-width: 89%;
+	height: auto;
+	padding: 1%;
+	margin: 0 auto;
+	border: none !important;
+}
+.gallery-caption {
+	margin-left: 0
+}
+.wp-caption-text,
+.gallery-caption {
+	color: #666
+}
+#author-info {
+	overflow: hidden
+}
+#author-info .avatar {
+	float: left;
+	margin: .3em 1em 0 0;
+}
+/*  ------------------------------------------------------------
+	Attachments
+	--------------------------------------------------------- */
+.attachment-jpeg #container,
+.attachment-png #container {
+	width: 100%
+}
+.attachment-jpeg #content,
+.attachment-png #content {
+	width: 930px
+}
+.attachment-jpeg #comments,
+.attachment-png #comments {
+	width: 540px;
+	overflow: hidden;
+}
+.attachment-jpeg .main-aside,
+.attachment-png .main-aside {
+	display: none
+}
+/*  ------------------------------------------------------------
+	Navigation
+	--------------------------------------------------------- */
+.navigation {
+	color: #666;
+	overflow: hidden;
+}
+.navigation a {
+
+}
+.navigation .meta-nav {
+	font-style: normal
+}
+.nav-previous {
+	float: left;
+	width: 50%;
+}
+.nav-next {
+	float: right;
+	width: 50%;
+	text-align: right;
+}
+#nav-above,
+#nav-below {
+	width: 100%
+}
+#nav-above {
+	display: none
+}
+.paged #nav-above {
+	display: block
+}
+/*  ------------------------------------------------------------
+	Comments
+	--------------------------------------------------------- */
+#comments {
+	clear: both
+}
+#comments-list ol,
+#comments-list ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#comments-list li {
+	background: #fafafa;
+	padding: 16px 16px 0;
+	position: relative;
+	overflow: hidden;
+	border-top: 1px solid #ccc;
+}
+#comments-list ol > li:first-child {
+	border: 0
+}
+#comments-list li.alt {
+	background: #fff
+}
+#comments-list li.bypostauthor {
+	background: #ffc
+}
+#comments-list ul {
+	margin: 0 -16px;
+	clear: both;
+}
+#comments-list ul li {
+	margin-left: 52px
+}
+#comments-list li .avatar {
+	position: absolute;
+	top: 16px;
+	left: 16px;
+	width: 36px;
+	height: 36px;
+}
+#comments-list .comment-author {
+	font-weight: bold;
+	padding: 0 0 0 52px;
+	float: left;
+}
+#comments-list .comment-meta {
+	color: #666;
+	padding: 0 0 0 5px;
+	float: left;
+}
+#comments-list .comment-meta a {
+
+}
+#comments-list .comment-meta a:active,
+#comments-list .comment-meta a:hover {
+	color: #FF4B33
+}
+#comments-list .comment-content {
+	margin-left: 52px;
+	clear: both;
+	float: left;
+}
+div.comment-reply-link {
+	text-align: right;
+	position: absolute;
+	top: 16px;
+	right: 16px;
+}
+.comment-reply-link a {
+
+}
+.comment-navigation {
+	font-weight: bold;
+	padding: 0 0 18px 0;
+	margin-right: 0.5em;
+}
+.comment-navigation a {
+
+}
+.comment-navigation a,
+.comment-navigation span {
+	margin-right: 0.5em
+}
+#trackbacks-list .comment-content {
+	position: absolute;
+	left: -10000px;
+}
+#respond {
+	margin: 16px 0;
+	overflow: hidden;
+	position: relative;
+}
+#reply-title {
+	margin-top: 0;
+}
+#comments-list #respond {
+	margin: 0 0 18px 0;
+	padding: 18px 1.5em;
+}
+#comments-list ul #respond {
+	margin: 0
+}
+#cancel-comment-reply-link {
+	float: right
+}
+#respond .required {
+	color: #FF4B33;
+	font-weight: bold;
+}
+.form-section {
+	margin: 16px 0
+}
+.form-section input {
+	width: 98%
+}
+.form-section textarea {
+	width: 99%
+}
+#form-allowed-tags p {
+	color: #666;
+	margin: 0;
+}
+.form-submit {
+	
+}
+.subscribe-to-comments {
+	color: #666;
+	float: left;
+	font-size: 11px;
+	margin: 0;
+	padding: 18px 0 0 0;
+}
+.solo-subscribe-to-comments {
+	color: #666
+}
+.comment_license {
+	color: #666;
+	clear: both;
+	margin: 0;
+}
+/*  ------------------------------------------------------------
+	Asides & Widgets
+	--------------------------------------------------------- */
+.aside .current_page_item a {
+	font-weight: bold
+}
+.aside .current_page_item .page_item a {
+	font-weight: normal
+}
+.aside {
+	
+}
+.aside ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.aside ul ul {
+	list-style: disc;
+	margin: 0 0 22px 22px;
+	padding: 0;
+}
+.aside ul ul li {
+	padding: 1px 0
+}
+.aside ul ul ul {
+	margin-bottom: 0
+}
+.aside #searchsubmit {
+	display: none
+}
+#content .aside {
+	margin: 16px 0;
+}
+#content .aside ul {
+
+}
+#content .aside h3 {
+
+}
+#content .aside ul ul {
+
+}
+#subsidiary {
+
+}
+/*  ------------------------------------------------------------
+	Footer
+	--------------------------------------------------------- */
+#footer {
+	margin: 16px 0;
+}
+#siteinfo {
+	color: #666
+}
+/*  ------------------------------------------------------------
+	Images
+	--------------------------------------------------------- */
+.entry-content .wp-post-image {
+	
+}
+.entry-content img {
+	height: auto;
+	margin: 0 0 18px 0;
+	max-width: 100%;
+}
+.alignleft,
+img.alignleft {
+	float: left;
+	margin-right: 16px;
+}
+.alignright,
+img.alignright {
+	display: block;
+	float: right;
+	margin-left: 16px;
+}
+.aligncenter,
+img.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	clear: both;
+}
+.wp-caption {
+	text-align: center;
+	margin-bottom: 16px;
+}
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+}
+.wp-caption p.wp-caption-text {
+	margin: 0;
+	padding: 4px 0 8px;
+}
+.gallery-icon {
+	margin: 0;
+	padding-top: 0;
+}
+.gallery img {
+	margin: 0
+}
+.gallery-caption {
+	padding: 8px 8px 0
+}
+.wp-smiley {
+	/* Prevent the smileys from breaking line-height */
+	max-height: 12px;
+	margin: 0 !important;
+	background: transparent;
+}

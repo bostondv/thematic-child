@@ -1,0 +1,107 @@
+/*  ------------------------------------------------------------
+	 Global
+	Mobile first css, any larger viewport only css 
+	should go in later sections
+	--------------------------------------------------------- */
+img,
+object,
+embed {
+	max-width: 100%;
+	height: inherit;
+}
+input,
+select,
+textarea {
+	max-width: 100%
+}
+body {
+	-webkit-text-size-adjust: none; /* Stops the iPhone scalling type up */
+}
+.wp-caption {
+	max-width: 100% !important
+}
+#content {
+	overflow: hidden
+}
+#footer {
+	clear: both
+}
+#siteinfo {
+	clear: both
+}
+/*  ------------------------------------------------------------
+	 iPad, etc
+	Style adjustments for viewports 480px and over
+	--------------------------------------------------------- */
+@media only screen and (min-width: 480px) { 
+	.main-aside {
+		width: 47.5%;
+		float: left;
+	}
+	#secondary {
+		clear: right;
+		margin-left: 5%;
+	}
+	#subsidiary .aside {
+		width: 30%;
+		float: left;
+		margin: 0 0 0 5%;
+	}
+	#subsidiary #first {
+		margin: 0
+	}
+}
+/*  ------------------------------------------------------------
+	Desktop
+	Style adjustments for viewports 768px and over
+	--------------------------------------------------------- */
+@media only screen and (min-width: 768px) { 
+	body {
+		background: url(grid.png) repeat-y top center
+	}
+	#branding {
+		max-width: 1140px;
+		margin: 0 auto;
+	}
+	.menu {
+		max-width: 1140px;
+		margin: 0 auto;
+	}
+	#main {
+		max-width: 1140px;
+		margin: 0 auto;
+		position: relative;
+		overflow: auto;
+	}
+	#container {
+		width: 60%;
+		float: left;
+		margin: 0 20%;
+	}
+	.main-aside {
+		width: 15%;
+		float: left;
+	}
+	#primary {
+		margin: 0 0 0 -100%
+	}
+	#secondary {
+		margin: 0 0 0 -15%
+	}
+	#subsidiary {
+		max-width: 1140px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	#siteinfo {
+		max-width: 1140px;
+		margin: 0 auto;
+	}
+	/*  ------------------------------------------------------------
+		Page Templates
+		--------------------------------------------------------- */
+	.page-template-template-page-fullwidth-php #container {
+		float: none;
+		margin: 0;
+	}
+}
